@@ -10,7 +10,7 @@ interface ResourceCardProps {
   name: string;
   description: string;
   url: string;
-  category: string;
+  category: string | string[];
   color: string;
   imageUrl?: string;
   featured?: boolean;
@@ -30,8 +30,9 @@ export function ResourceCard({
   logoPreview,
   preview = false,
 }: ResourceCardProps) {
+  const categoryId = Array.isArray(category) ? category[0] : category;
   const categoryName =
-    categories.find((c) => c.id === category)?.name || category;
+    categories.find((c) => c.id === categoryId)?.name || categoryId;
 
   const CardWrapper = ({ children }: { children: React.ReactNode }) => {
     if (preview) {

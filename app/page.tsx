@@ -14,7 +14,9 @@ export default function Home() {
   const [activeCategory, setActiveCategory] = useState("all")
 
   const filteredResources =
-    activeCategory === "all" ? resources : resources.filter((resource) => resource.category === activeCategory)
+    activeCategory === "all" 
+      ? resources 
+      : resources.filter((resource) => resource.category.includes(activeCategory))
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -65,7 +67,7 @@ export default function Home() {
             <div className="mt-6">
               <Link href="/advertise">
                 <Button variant="outline" className="text-sm">
-                  Get featured for $99
+                  Get featured
                 </Button>
               </Link>
             </div>

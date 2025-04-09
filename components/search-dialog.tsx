@@ -19,13 +19,31 @@ export function SearchDialog({
     if (!query) return resources
 
     const lowerQuery = query.toLowerCase()
-    return resources.filter(
-      (resource) =>
+    return resources.filter((resource) => {
+      // Check name and description
+      if (
         resource.name.toLowerCase().includes(lowerQuery) ||
-        resource.description.toLowerCase().includes(lowerQuery) ||
-        categories.find((c) => c.id === resource.category)?.name.toLowerCase().includes(lowerQuery)
-    )
+        resource.description.toLowerCase().includes(lowerQuery)
+      ) {
+        return true
+      }
+      
+      // Check category
+      const categoryIds = Array.isArray(resource.category) 
+        ? resource.category 
+        : [resource.category]
+      
+      return categoryIds.some(catId => 
+        categories.find(c => c.id === catId)?.name.toLowerCase().includes(lowerQuery)
+      )
+    })
   }, [query])
+
+  // Helper function to get category name
+  const getCategoryName = (category: string | string[]) => {
+    const categoryId = Array.isArray(category) ? category[0] : category
+    return categories.find(c => c.id === categoryId)?.name || categoryId
+  }
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
@@ -74,7 +92,7 @@ export function SearchDialog({
                     </span>
                   </div>
                   <span className="ml-auto text-xs text-muted-foreground">
-                    {categories.find((c) => c.id === resource.category)?.name}
+                    {getCategoryName(resource.category)}
                   </span>
                 </CommandItem>
               </Link>

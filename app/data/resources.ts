@@ -1,17 +1,17 @@
 export interface Category {
-  id: string
-  name: string
+  id: string;
+  name: string;
 }
 
 export interface Resource {
-  id: string
-  name: string
-  description: string
-  url: string
-  category: string
-  color: string
-  imageUrl: string // Changed from logo to imageUrl
-  featured: boolean
+  id: string;
+  name: string;
+  description: string;
+  url: string;
+  category: string[];
+  color: string;
+  imageUrl: string;
+  featured: boolean;
 }
 
 export const categories: Category[] = [
@@ -24,7 +24,15 @@ export const categories: Category[] = [
   { id: "security", name: "Security & VPN" },
   { id: "connectivity", name: "Connectivity" },
   { id: "community", name: "Community" },
-]
+  { id: "flights", name: "Flights" },
+  { id: "passport-visa", name: "Passport & Visa" }, 
+  { id: "coworking", name: "Coworking" },
+  { id: "gears", name: "Gears & Gadgets" },
+  { id: "retreats", name: "Retreats" },
+  { id: "books", name: "Books" },
+  { id: "blogs", name: "Blogs" },
+  { id: "guides", name: "Travel Guides" },
+];
 
 export const resources: Resource[] = [
   {
@@ -33,7 +41,7 @@ export const resources: Resource[] = [
     description:
       "The biggest network of nomads in the world. Data on 1,500+ cities with cost of living, internet speed, weather and other metrics.",
     url: "https://nomadlist.com/?ref=nomadtools",
-    category: "community",
+    category: ["community", "guides"],
     color: "#FF4742",
     imageUrl: "/images/nomadlist-logo.png",
     featured: true,
@@ -41,9 +49,10 @@ export const resources: Resource[] = [
   {
     id: "remote-ok",
     name: "Remote OK",
-    description: "Find remote jobs for digital nomads. The largest remote work community in the world.",
+    description:
+      "Find remote jobs for digital nomads. The largest remote work community in the world.",
     url: "https://remoteok.com/?ref=nomadtools",
-    category: "remote-work",
+    category: ["remote-work"],
     color: "#000000",
     imageUrl: "/images/remoteok-logo.png",
     featured: false,
@@ -54,7 +63,7 @@ export const resources: Resource[] = [
     description:
       "Global travel medical insurance for nomads. Coverage in 175+ countries with affordable monthly payments.",
     url: "https://safetywing.com/?ref=nomadtools",
-    category: "insurance",
+    category: ["insurance"],
     color: "#5ECBC1",
     imageUrl: "/images/safetywing-logo.png",
     featured: false,
@@ -65,7 +74,7 @@ export const resources: Resource[] = [
     description:
       "International banking without fees. Send, receive, and spend money internationally at the real exchange rate.",
     url: "https://wise.com/?ref=nomadtools",
-    category: "banking",
+    category: ["banking"],
     color: "#00B9FF",
     imageUrl: "/images/wise-logo.png",
     featured: false,
@@ -73,9 +82,10 @@ export const resources: Resource[] = [
   {
     id: "revolut",
     name: "Revolut",
-    description: "Global money app with multi-currency accounts, no hidden fees, and built-in budgeting tools.",
+    description:
+      "Global money app with multi-currency accounts, no hidden fees, and built-in budgeting tools.",
     url: "https://revolut.com/?ref=nomadtools",
-    category: "banking",
+    category: ["banking"],
     color: "#2C67FF",
     imageUrl: "/images/revolut-logo.png",
     featured: false,
@@ -83,9 +93,10 @@ export const resources: Resource[] = [
   {
     id: "deel",
     name: "Deel",
-    description: "Hire, pay and manage contractors and employees in 150+ countries. Compliant contracts and payments.",
+    description:
+      "Hire, pay and manage contractors and employees in 150+ countries. Compliant contracts and payments.",
     url: "https://deel.com/?ref=nomadtools",
-    category: "banking",
+    category: ["banking"],
     color: "#5C50E8",
     imageUrl: "/images/deel-logo.png",
     featured: false,
@@ -93,9 +104,10 @@ export const resources: Resource[] = [
   {
     id: "airalo",
     name: "Airalo",
-    description: "Digital eSIMs for 200+ countries and regions. Stay connected globally with affordable data plans.",
+    description:
+      "Digital eSIMs for 200+ countries and regions. Stay connected globally with affordable data plans.",
     url: "https://airalo.com/?ref=nomadtools",
-    category: "connectivity",
+    category: ["connectivity"],
     color: "#48AC98",
     imageUrl: "/images/airalo-logo.jpeg",
     featured: false,
@@ -103,9 +115,10 @@ export const resources: Resource[] = [
   {
     id: "express-vpn",
     name: "ExpressVPN",
-    description: "High-speed, ultra-secure VPN with servers in 94 countries. Protect your privacy online.",
+    description:
+      "High-speed, ultra-secure VPN with servers in 94 countries. Protect your privacy online.",
     url: "https://expressvpn.com/?ref=nomadtools",
-    category: "security",
+    category: ["security"],
     color: "#DA3940",
     imageUrl: "/images/expressvpn-logo.png",
     featured: false,
@@ -113,9 +126,10 @@ export const resources: Resource[] = [
   {
     id: "world-nomads",
     name: "World Nomads",
-    description: "Comprehensive travel insurance for adventurous travelers. Coverage for medical emergencies and gear.",
+    description:
+      "Comprehensive travel insurance for adventurous travelers. Coverage for medical emergencies and gear.",
     url: "https://worldnomads.com/?ref=nomadtools",
-    category: "insurance",
+    category: ["insurance"],
     color: "#26C6DA",
     imageUrl: "/images/worldnomads-logo.png",
     featured: false,
@@ -126,7 +140,7 @@ export const resources: Resource[] = [
     description:
       "Mobile banking with no hidden fees. Open a 100% mobile bank account in minutes with free ATM withdrawals.",
     url: "https://n26.com/?ref=nomadtools",
-    category: "banking",
+    category: ["banking"],
     color: "#20D5A4",
     imageUrl: "/images/n26-logo.png",
     featured: false,
@@ -137,7 +151,7 @@ export const resources: Resource[] = [
     description:
       "Connect with hosts worldwide for cultural exchange. Work a few hours daily in exchange for accommodation.",
     url: "https://workaway.info/?ref=nomadtools",
-    category: "accommodation",
+    category: ["accommodation"],
     color: "#F15A29",
     imageUrl: "/images/workaway-logo.png",
     featured: false,
@@ -145,9 +159,10 @@ export const resources: Resource[] = [
   {
     id: "trusted-housesitters",
     name: "Trusted Housesitters",
-    description: "Stay for free in homes worldwide by caring for pets while their owners are away.",
+    description:
+      "Stay for free in homes worldwide by caring for pets while their owners are away.",
     url: "https://trustedhousesitters.com/?ref=nomadtools",
-    category: "accommodation",
+    category: ["accommodation"],
     color: "#1DBEC8",
     imageUrl: "/images/trustedhousesitters-logo.png",
     featured: false,
@@ -155,9 +170,10 @@ export const resources: Resource[] = [
   {
     id: "workfrom",
     name: "Workfrom",
-    description: "Find and review the best places to work remotely. Community-driven platform with verified workspaces.",
+    description:
+      "Find and review the best places to work remotely. Community-driven platform with verified workspaces.",
     url: "https://workfrom.co/?ref=nomadtools",
-    category: "remote-work",
+    category: ["remote-work"],
     color: "#FF6B6B",
     imageUrl: "/images/workfrom-logo.jpeg",
     featured: false,
@@ -165,9 +181,10 @@ export const resources: Resource[] = [
   {
     id: "wework",
     name: "WeWork",
-    description: "Global network of flexible workspaces. Access professional office spaces and meeting rooms worldwide.",
+    description:
+      "Global network of flexible workspaces. Access professional office spaces and meeting rooms worldwide.",
     url: "https://wework.com/?ref=nomadtools",
-    category: "remote-work",
+    category: ["coworking", "remote-work"],
     color: "#2D2926",
     imageUrl: "/images/wework-logo.png",
     featured: false,
@@ -175,9 +192,10 @@ export const resources: Resource[] = [
   {
     id: "dollar-app",
     name: "DollarApp",
-    description: "Digital wallet for international payments and remittances. Low fees and competitive exchange rates.",
+    description:
+      "Digital wallet for international payments and remittances. Low fees and competitive exchange rates.",
     url: "https://www.dolarapp.com/?ref=nomadtools",
-    category: "banking",
+    category: ["banking"],
     color: "#00A651",
     imageUrl: "/images/dollarapp-logo.png",
     featured: false,
@@ -185,9 +203,10 @@ export const resources: Resource[] = [
   {
     id: "airtm",
     name: "Airtm",
-    description: "Digital wallet for countries with currency restrictions. Convert local currency to USD and other stable currencies.",
+    description:
+      "Digital wallet for countries with currency restrictions. Convert local currency to USD and other stable currencies.",
     url: "https://airtm.com/?ref=nomadtools",
-    category: "banking",
+    category: ["banking"],
     color: "#1E88E5",
     imageUrl: "/images/airtm-logo.jpeg",
     featured: false,
@@ -195,9 +214,10 @@ export const resources: Resource[] = [
   {
     id: "alosim",
     name: "aloSIM",
-    description: "Digital SIM cards for global connectivity. Stay connected in 170+ countries with flexible data plans.",
+    description:
+      "Digital SIM cards for global connectivity. Stay connected in 170+ countries with flexible data plans.",
     url: "https://alosim.com/?ref=nomadtools",
-    category: "connectivity",
+    category: ["connectivity"],
     color: "#FF9800",
     imageUrl: "/images/alosim-logo.png",
     featured: false,
@@ -205,9 +225,10 @@ export const resources: Resource[] = [
   {
     id: "coliving",
     name: "Coliving",
-    description: "Find coliving spaces worldwide. Live and work with like-minded digital nomads in community spaces.",
+    description:
+      "Find coliving spaces worldwide. Live and work with like-minded digital nomads in community spaces.",
     url: "https://coliving.com/?ref=nomadtools",
-    category: "accommodation",
+    category: ["accommodation"],
     color: "#4CAF50",
     imageUrl: "/images/coliving-logo.png",
     featured: false,
@@ -215,9 +236,10 @@ export const resources: Resource[] = [
   {
     id: "flatio",
     name: "Flatio",
-    description: "Short-term apartment rentals worldwide. Flexible stays with no deposits and instant booking.",
+    description:
+      "Short-term apartment rentals worldwide. Flexible stays with no deposits and instant booking.",
     url: "https://flatio.com/?ref=nomadtools",
-    category: "accommodation",
+    category: ["accommodation"],
     color: "#2196F3",
     imageUrl: "/images/flatio-logo.png",
     featured: false,
@@ -225,9 +247,10 @@ export const resources: Resource[] = [
   {
     id: "genki",
     name: "Genki",
-    description: "Japanese health insurance for foreigners. Comprehensive coverage with English support.",
+    description:
+      "Japanese health insurance for foreigners. Comprehensive coverage with English support.",
     url: "https://genki-life.com/?ref=nomadtools",
-    category: "insurance",
+    category: ["insurance"],
     color: "#E91E63",
     imageUrl: "/images/genki-logo.jpeg",
     featured: false,
@@ -235,9 +258,10 @@ export const resources: Resource[] = [
   {
     id: "anyplace",
     name: "Anyplace",
-    description: "Furnished apartments for remote workers. Month-to-month rentals with workspace amenities.",
+    description:
+      "Furnished apartments for remote workers. Month-to-month rentals with workspace amenities.",
     url: "https://anyplace.com/?ref=nomadtools",
-    category: "accommodation",
+    category: ["accommodation"],
     color: "#9C27B0",
     imageUrl: "/images/anyplace-logo.jpeg",
     featured: false,
@@ -245,9 +269,10 @@ export const resources: Resource[] = [
   {
     id: "hanu-fit",
     name: "Hanu Fit",
-    description: "Global fitness membership. Access gyms and fitness classes worldwide with one subscription.",
+    description:
+      "Global fitness membership. Access gyms and fitness classes worldwide with one subscription.",
     url: "https://hanufit.com/?ref=nomadtools",
-    category: "health",
+    category: ["health"],
     color: "#FF5722",
     imageUrl: "/images/hanufit-logo.png",
     featured: false,
@@ -255,9 +280,10 @@ export const resources: Resource[] = [
   {
     id: "nord-vpn",
     name: "NordVPN",
-    description: "Secure VPN service with servers in 59 countries. Protect your privacy and access content worldwide.",
+    description:
+      "Secure VPN service with servers in 59 countries. Protect your privacy and access content worldwide.",
     url: "https://nordvpn.com/?ref=nomadtools",
-    category: "security",
+    category: ["security"],
     color: "#4687FF",
     imageUrl: "/images/nordvpn-logo.png",
     featured: false,
@@ -265,9 +291,10 @@ export const resources: Resource[] = [
   {
     id: "worldpackers",
     name: "WorldPackers",
-    description: "Volunteer opportunities worldwide. Exchange work for accommodation and cultural experiences.",
+    description:
+      "Volunteer opportunities worldwide. Exchange work for accommodation and cultural experiences.",
     url: "https://worldpackers.com/?ref=nomadtools",
-    category: "community",
+    category: ["community", "accommodation"],
     color: "#00BFA5",
     imageUrl: "/images/worldpackers-logo.jpeg",
     featured: false,
@@ -275,9 +302,10 @@ export const resources: Resource[] = [
   {
     id: "nestpick",
     name: "Nestpick",
-    description: "Furnished apartments for long-term stays. Verified accommodations in 80+ cities worldwide.",
+    description:
+      "Furnished apartments for long-term stays. Verified accommodations in 80+ cities worldwide.",
     url: "https://nestpick.com/?ref=nomadtools",
-    category: "accommodation",
+    category: ["accommodation"],
     color: "#FF4081",
     imageUrl: "/images/nestpick-logo.png",
     featured: false,
@@ -285,9 +313,10 @@ export const resources: Resource[] = [
   {
     id: "regus",
     name: "Regus",
-    description: "Global workspace provider. Access professional offices, meeting rooms, and coworking spaces.",
+    description:
+      "Global workspace provider. Access professional offices, meeting rooms, and coworking spaces.",
     url: "https://regus.com/?ref=nomadtools",
-    category: "remote-work",
+    category: ["coworking", "remote-work"],
     color: "#1976D2",
     imageUrl: "/images/regus-logo.png",
     featured: false,
@@ -295,9 +324,10 @@ export const resources: Resource[] = [
   {
     id: "remote-year",
     name: "Remote Year",
-    description: "Travel and work programs for remote workers. Live in 12 cities over 12 months with a community.",
+    description:
+      "Travel and work programs for remote workers. Live in 12 cities over 12 months with a community.",
     url: "https://remoteyear.com/?ref=nomadtools",
-    category: "community",
+    category: ["community"],
     color: "#7C4DFF",
     imageUrl: "/images/remoteyear-logo.png",
     featured: false,
@@ -305,9 +335,10 @@ export const resources: Resource[] = [
   {
     id: "remotive",
     name: "Remotive",
-    description: "Remote job board and community. Find remote work opportunities and connect with remote workers.",
+    description:
+      "Remote job board and community. Find remote work opportunities and connect with remote workers.",
     url: "https://remotive.com/?ref=nomadtools",
-    category: "remote-work",
+    category: ["remote-work"],
     color: "#455A64",
     imageUrl: "/images/remotive-logo.jpeg",
     featured: false,
@@ -315,9 +346,10 @@ export const resources: Resource[] = [
   {
     id: "unsettled",
     name: "Unsettled",
-    description: "Experiential travel programs for remote workers. 30-day retreats in inspiring locations worldwide.",
+    description:
+      "Experiential travel programs for remote workers. 30-day retreats in inspiring locations worldwide.",
     url: "https://beunsettled.co/?ref=nomadtools",
-    category: "community",
+    category: ["community"],
     color: "#FF6D00",
     imageUrl: "/images/unsettled-logo.jpeg",
     featured: false,
@@ -325,9 +357,10 @@ export const resources: Resource[] = [
   {
     id: "digital-nomad-world",
     name: "Digital Nomad World",
-    description: "Community and resources for digital nomads. Events, guides, and networking opportunities.",
+    description:
+      "Community and resources for digital nomads. Events, guides, and networking opportunities.",
     url: "https://digitalnomadworld.com/?ref=nomadtools",
-    category: "community",
+    category: ["community"],
     color: "#009688",
     imageUrl: "/images/digitalnomadworld-logo.png",
     featured: false,
@@ -335,9 +368,10 @@ export const resources: Resource[] = [
   {
     id: "location-indie",
     name: "Location Indie",
-    description: "Community and courses for location-independent entrepreneurs. Learn how to build a remote business.",
+    description:
+      "Community and courses for location-independent entrepreneurs. Learn how to build a remote business.",
     url: "https://locationindie.com/?ref=nomadtools",
-    category: "community",
+    category: ["community"],
     color: "#795548",
     imageUrl: "/images/locationindie-logo.png",
     featured: false,
@@ -345,9 +379,10 @@ export const resources: Resource[] = [
   {
     id: "freaking-nomads",
     name: "Freaking Nomads",
-    description: "Community and job board for digital nomads. Find remote work and connect with fellow nomads.",
+    description:
+      "Community and job board for digital nomads. Find remote work and connect with fellow nomads.",
     url: "https://freakingnomads.com/?ref=nomadtools",
-    category: "community",
+    category: ["community"],
     color: "#FF5722",
     imageUrl: "/images/freakingnomads-logo.jpeg",
     featured: false,
@@ -355,9 +390,10 @@ export const resources: Resource[] = [
   {
     id: "nomad-deals",
     name: "Nomad Deals",
-    description: "Exclusive discounts and deals for digital nomads. Save on tools, services, and accommodations.",
+    description:
+      "Exclusive discounts and deals for digital nomads. Save on tools, services, and accommodations.",
     url: "https://nomaddeals.co/?ref=nomadtools",
-    category: "community",
+    category: ["community"],
     color: "#4CAF50",
     imageUrl: "/images/nomadeals-logo.png",
     featured: false,
@@ -365,9 +401,10 @@ export const resources: Resource[] = [
   {
     id: "booking",
     name: "Booking.com",
-    description: "Global accommodation booking platform. Find hotels, apartments, and unique stays worldwide.",
+    description:
+      "Global accommodation booking platform. Find hotels, apartments, and unique stays worldwide.",
     url: "https://booking.com/?ref=nomadtools",
-    category: "accommodation",
+    category: ["accommodation"],
     color: "#003580",
     imageUrl: "/images/booking-logo.png",
     featured: false,
@@ -375,9 +412,10 @@ export const resources: Resource[] = [
   {
     id: "airbnb",
     name: "Airbnb",
-    description: "Book unique accommodations and experiences. Find local homes, apartments, and rooms worldwide.",
+    description:
+      "Book unique accommodations and experiences. Find local homes, apartments, and rooms worldwide.",
     url: "https://airbnb.com/?ref=nomadtools",
-    category: "accommodation",
+    category: ["accommodation"],
     color: "#FF5A5F",
     imageUrl: "/images/airbnb-logo.png",
     featured: false,
@@ -385,9 +423,10 @@ export const resources: Resource[] = [
   {
     id: "remote",
     name: "Remote",
-    description: "Remote job board and community. Find remote work opportunities across various industries.",
+    description:
+      "Remote job board and community. Find remote work opportunities across various industries.",
     url: "https://remote.com/?ref=nomadtools",
-    category: "remote-work",
+    category: ["remote-work"],
     color: "#2D3748",
     imageUrl: "/images/remote-logo.png",
     featured: false,
@@ -395,9 +434,10 @@ export const resources: Resource[] = [
   {
     id: "midstay",
     name: "MidStay",
-    description: "Medium-term furnished rentals. Perfect for digital nomads looking for 1-6 month stays.",
+    description:
+      "Medium-term furnished rentals. Perfect for digital nomads looking for 1-6 month stays.",
     url: "https://midstay.com/?ref=nomadtools",
-    category: "accommodation",
+    category: ["accommodation"],
     color: "#3182CE",
     imageUrl: "/images/midstay-logo.png",
     featured: false,
@@ -405,9 +445,10 @@ export const resources: Resource[] = [
   {
     id: "iwg",
     name: "IWG",
-    description: "Global workspace provider. Access Regus, Spaces, and other flexible office solutions worldwide.",
+    description:
+      "Global workspace provider. Access Regus, Spaces, and other flexible office solutions worldwide.",
     url: "https://iwgplc.com/?ref=nomadtools",
-    category: "remote-work",
+    category: ["remote-work"],
     color: "#1A365D",
     imageUrl: "/images/iwg-logo.png",
     featured: false,
@@ -415,9 +456,10 @@ export const resources: Resource[] = [
   {
     id: "posthog",
     name: "PostHog",
-    description: "Open-source product analytics. Understand user behavior and improve your digital products.",
+    description:
+      "Open-source product analytics. Understand user behavior and improve your digital products.",
     url: "https://posthog.com/?ref=nomadtools",
-    category: "remote-work",
+    category: ["remote-work"],
     color: "#6366F1",
     imageUrl: "/images/posthog-logo.jpeg",
     featured: false,
@@ -425,9 +467,10 @@ export const resources: Resource[] = [
   {
     id: "relay",
     name: "Relay",
-    description: "Digital banking for businesses. Manage finances, pay vendors, and track expenses globally.",
+    description:
+      "Digital banking for businesses. Manage finances, pay vendors, and track expenses globally.",
     url: "https://relayfi.com/?ref=nomadtools",
-    category: "banking",
+    category: ["banking"],
     color: "#3B82F6",
     imageUrl: "/images/relay-logo.jpeg",
     featured: false,
@@ -435,9 +478,10 @@ export const resources: Resource[] = [
   {
     id: "salu-health",
     name: "Salu Health",
-    description: "Digital health platform for remote workers. Access healthcare services and wellness resources.",
+    description:
+      "Digital health platform for remote workers. Access healthcare services and wellness resources.",
     url: "https://salu.health/?ref=nomadtools",
-    category: "health",
+    category: ["health"],
     color: "#10B981",
     imageUrl: "/images/saluhealth-logo.jpeg",
     featured: false,
@@ -445,9 +489,10 @@ export const resources: Resource[] = [
   {
     id: "roamr",
     name: "Roamr",
-    description: "Find and book coliving spaces worldwide. Connect with like-minded digital nomads.",
+    description:
+      "Find and book coliving spaces worldwide. Connect with like-minded digital nomads.",
     url: "https://roamr.com/?ref=nomadtools",
-    category: "accommodation",
+    category: ["accommodation"],
     color: "#8B5CF6",
     imageUrl: "/images/roamr-logo.jpeg",
     featured: false,
@@ -455,9 +500,10 @@ export const resources: Resource[] = [
   {
     id: "spotahome",
     name: "SpotaHome",
-    description: "Verified accommodation rentals. Find furnished apartments for medium to long-term stays.",
+    description:
+      "Verified accommodation rentals. Find furnished apartments for medium to long-term stays.",
     url: "https://spotahome.com/?ref=nomadtools",
-    category: "accommodation",
+    category: ["accommodation"],
     color: "#EC4899",
     imageUrl: "/images/spotahome-logo.png",
     featured: false,
@@ -465,9 +511,10 @@ export const resources: Resource[] = [
   {
     id: "growth-bundle",
     name: "Growth Bundle",
-    description: "Curated collection of tools and resources for digital nomads. Boost productivity and business growth.",
+    description:
+      "Curated collection of tools and resources for digital nomads. Boost productivity and business growth.",
     url: "https://growthbundle.com/?ref=nomadtools",
-    category: "remote-work",
+    category: ["remote-work"],
     color: "#F59E0B",
     imageUrl: "/images/growthbundle-logo.jpeg",
     featured: false,
@@ -475,9 +522,10 @@ export const resources: Resource[] = [
   {
     id: "todoist",
     name: "Todoist",
-    description: "Task management and productivity app. Organize work and personal projects across devices.",
+    description:
+      "Task management and productivity app. Organize work and personal projects across devices.",
     url: "https://todoist.com/?ref=nomadtools",
-    category: "remote-work",
+    category: ["remote-work"],
     color: "#E44332",
     imageUrl: "/images/todoist-logo.png",
     featured: false,
@@ -485,9 +533,10 @@ export const resources: Resource[] = [
   {
     id: "taly",
     name: "Taly",
-    description: "TALY turns manual, repetitve, and mundane tasks into an automated, streamlined, and efficient process that reduces costs and improves productivity.",
+    description:
+      "TALY turns manual, repetitve, and mundane tasks into an automated, streamlined, and efficient process that reduces costs and improves productivity.",
     url: "https://wearetaly.com/?ref=nomadtools",
-    category: "remote-work",
+    category: ["remote-work"],
     color: "#6366F1",
     imageUrl: "/images/taly-logo.png",
     featured: false,
@@ -495,9 +544,10 @@ export const resources: Resource[] = [
   {
     id: "evernote",
     name: "Evernote",
-    description: "Note-taking and organization app. Capture ideas, manage projects, and stay productive on the go.",
+    description:
+      "Note-taking and organization app. Capture ideas, manage projects, and stay productive on the go.",
     url: "https://evernote.com/?ref=nomadtools",
-    category: "remote-work",
+    category: ["remote-work"],
     color: "#2DBE60",
     imageUrl: "/images/evernote-logo.jpeg",
     featured: false,
@@ -505,9 +555,10 @@ export const resources: Resource[] = [
   {
     id: "oyster-hr",
     name: "Oyster HR",
-    description: "Global employment platform. Hire, pay, and manage remote workers compliantly across borders.",
+    description:
+      "Global employment platform. Hire, pay, and manage remote workers compliantly across borders.",
     url: "https://oysterhr.com/?ref=nomadtools",
-    category: "remote-work",
+    category: ["remote-work"],
     color: "#FF6B6B",
     imageUrl: "/images/oyster-logo.jpeg",
     featured: false,
@@ -515,9 +566,10 @@ export const resources: Resource[] = [
   {
     id: "rivermate",
     name: "Rivermate",
-    description: "Global payroll and compliance platform. Manage international teams and contractors easily.",
+    description:
+      "Global payroll and compliance platform. Manage international teams and contractors easily.",
     url: "https://rivermate.com/?ref=nomadtools",
-    category: "remote-work",
+    category: ["remote-work"],
     color: "#3B82F6",
     imageUrl: "/images/rivermate-logo.jpeg",
     featured: false,
@@ -525,9 +577,10 @@ export const resources: Resource[] = [
   {
     id: "nomadlife",
     name: "Digital Nomad Life",
-    description: "Community and resources for digital nomads. Find accommodation, coworking spaces, and connect with fellow nomads.",
+    description:
+      "Community and resources for digital nomads. Find accommodation, coworking spaces, and connect with fellow nomads.",
     url: "https://www.nomadlyf.com/?ref=nomadtools",
-    category: "community",
+    category: ["community"],
     color: "#10B981",
     imageUrl: "/images/nomadlife-logo.webp",
     featured: false,
@@ -535,9 +588,10 @@ export const resources: Resource[] = [
   {
     id: "coworkations",
     name: "Coworkations",
-    description: "Work and travel retreats for digital nomads. Join curated communities in inspiring locations worldwide.",
+    description:
+      "Work and travel retreats for digital nomads. Join curated communities in inspiring locations worldwide.",
     url: "https://coworkations.com/?ref=nomadtools",
-    category: "community",
+    category: ["community"],
     color: "#8B5CF6",
     imageUrl: "/images/coworkations-logo.jpeg",
     featured: false,
@@ -545,9 +599,10 @@ export const resources: Resource[] = [
   {
     id: "punta",
     name: "Punta",
-    description: "Social platform for digital nomads. Find travel buddies, share experiences, and discover nomad-friendly destinations.",
+    description:
+      "Social platform for digital nomads. Find travel buddies, share experiences, and discover nomad-friendly destinations.",
     url: "https://punta.app/?ref=nomadtools",
-    category: "community",
+    category: ["community"],
     color: "#EC4899",
     imageUrl: "/images/punta-logo.jpeg",
     featured: false,
@@ -555,9 +610,10 @@ export const resources: Resource[] = [
   {
     id: "remote-nomad-jobs",
     name: "Remote Nomad Jobs",
-    description: "Job board specifically for digital nomads. Find remote work opportunities that allow for location independence.",
+    description:
+      "Job board specifically for digital nomads. Find remote work opportunities that allow for location independence.",
     url: "https://remotenomadjobs.com/?ref=nomadtools",
-    category: "remote-work",
+    category: ["remote-work"],
     color: "#F59E0B",
     imageUrl: "/images/remotenomadjobs-logo.png",
     featured: false,
@@ -565,9 +621,10 @@ export const resources: Resource[] = [
   {
     id: "insured-nomads",
     name: "Insured Nomads",
-    description: "Insurance solutions for digital nomads. Comprehensive coverage for health, travel, and belongings.",
+    description:
+      "Insurance solutions for digital nomads. Comprehensive coverage for health, travel, and belongings.",
     url: "https://insurednomads.com/?ref=nomadtools",
-    category: "insurance",
+    category: ["insurance"],
     color: "#6366F1",
     imageUrl: "/images/insurednomads-logo.jpeg",
     featured: false,
@@ -575,9 +632,10 @@ export const resources: Resource[] = [
   {
     id: "roamrank",
     name: "RoamRank",
-    description: "City rankings and data for digital nomads. Compare cost of living, internet speed, and quality of life metrics.",
+    description:
+      "City rankings and data for digital nomads. Compare cost of living, internet speed, and quality of life metrics.",
     url: "https://roamrank.com/?ref=nomadtools",
-    category: "community",
+    category: ["community"],
     color: "#14B8A6",
     imageUrl: "/images/roamrank-logo.png",
     featured: false,
@@ -585,9 +643,10 @@ export const resources: Resource[] = [
   {
     id: "flexjobs",
     name: "FlexJobs",
-    description: "Curated remote and flexible job board. Hand-screened remote jobs in 50+ career categories.",
+    description:
+      "Curated remote and flexible job board. Hand-screened remote jobs in 50+ career categories.",
     url: "https://flexjobs.com/?ref=nomadtools",
-    category: "remote-work",
+    category: ["remote-work"],
     color: "#1E88E5",
     imageUrl: "/images/flexjobs-logo.jpeg",
     featured: false,
@@ -595,9 +654,10 @@ export const resources: Resource[] = [
   {
     id: "upwork",
     name: "Upwork",
-    description: "Global freelancing platform. Find remote work opportunities and connect with clients worldwide.",
+    description:
+      "Global freelancing platform. Find remote work opportunities and connect with clients worldwide.",
     url: "https://upwork.com/?ref=nomadtools",
-    category: "remote-work",
+    category: ["remote-work"],
     color: "#6FDA44",
     imageUrl: "/images/upwork-logo.jpeg",
     featured: false,
@@ -605,9 +665,10 @@ export const resources: Resource[] = [
   {
     id: "we-work-remotely",
     name: "We Work Remotely",
-    description: "Remote job board for digital nomads. Find remote positions in tech, marketing, customer service, and more.",
+    description:
+      "Remote job board for digital nomads. Find remote positions in tech, marketing, customer service, and more.",
     url: "https://weworkremotely.com/?ref=nomadtools",
-    category: "remote-work",
+    category: ["remote-work"],
     color: "#FF4F64",
     imageUrl: "/images/weworkremotely-logo.png",
     featured: false,
@@ -615,9 +676,10 @@ export const resources: Resource[] = [
   {
     id: "passport-index",
     name: "Passport Index",
-    description: "Global mobility intelligence. Check visa requirements and passport rankings for different nationalities.",
+    description:
+      "Global mobility intelligence. Check visa requirements and passport rankings for different nationalities.",
     url: "https://passportindex.org/?ref=nomadtools",
-    category: "community",
+    category: ["passport-visa"],
     color: "#2196F3",
     imageUrl: "/images/passportindex-logo.jpeg",
     featured: false,
@@ -625,9 +687,10 @@ export const resources: Resource[] = [
   {
     id: "himalayas",
     name: "Himalayas",
-    description: "Remote job board focused on tech and startup roles. Find opportunities at innovative companies worldwide.",
+    description:
+      "Remote job board focused on tech and startup roles. Find opportunities at innovative companies worldwide.",
     url: "https://himalayas.app/?ref=nomadtools",
-    category: "remote-work",
+    category: ["remote-work"],
     color: "#4A90E2",
     imageUrl: "/images/himalayas-logo.jpeg",
     featured: false,
@@ -635,9 +698,10 @@ export const resources: Resource[] = [
   {
     id: "nomad-rental",
     name: "Nomad Rental",
-    description: "Long-term rentals for digital nomads. Find furnished apartments with reliable wifi and workspaces.",
+    description:
+      "Long-term rentals for digital nomads. Find furnished apartments with reliable wifi and workspaces.",
     url: "https://nomadrental.com/?ref=nomadtools",
-    category: "accommodation",
+    category: ["accommodation"],
     color: "#FF6B6B",
     imageUrl: "/images/nomadrental-logo.png",
     featured: false,
@@ -645,9 +709,10 @@ export const resources: Resource[] = [
   {
     id: "vrbo",
     name: "Vrbo",
-    description: "Vacation rentals worldwide. Book houses, cabins, and unique properties for your nomadic lifestyle.",
+    description:
+      "Vacation rentals worldwide. Book houses, cabins, and unique properties for your nomadic lifestyle.",
     url: "https://vrbo.com/?ref=nomadtools",
-    category: "accommodation",
+    category: ["accommodation"],
     color: "#3D4DB7",
     imageUrl: "/images/vrbo-logo.png",
     featured: false,
@@ -655,9 +720,10 @@ export const resources: Resource[] = [
   {
     id: "hostelworld",
     name: "HostelWorld",
-    description: "Global hostel booking platform. Find affordable accommodation and meet fellow travelers worldwide.",
+    description:
+      "Global hostel booking platform. Find affordable accommodation and meet fellow travelers worldwide.",
     url: "https://hostelworld.com/?ref=nomadtools",
-    category: "accommodation",
+    category: ["accommodation"],
     color: "#FF5A5F",
     imageUrl: "/images/hostelworld-logo.png",
     featured: false,
@@ -665,9 +731,10 @@ export const resources: Resource[] = [
   {
     id: "extreme-nomads",
     name: "Extreme Nomads",
-    description: "Community for adventure-seeking digital nomads. Resources and guides for extreme sports and travel.",
+    description:
+      "Community for adventure-seeking digital nomads. Resources and guides for extreme sports and travel.",
     url: "https://extremenomads.life/?ref=nomadtools",
-    category: "community",
+    category: ["blogs", "community"],
     color: "#FF4081",
     imageUrl: "/images/extremenomads-logo.png",
     featured: false,
@@ -675,9 +742,10 @@ export const resources: Resource[] = [
   {
     id: "lonely-planet",
     name: "Lonely Planet",
-    description: "Travel guides and resources. Expert advice for destinations worldwide and digital nomad hotspots.",
+    description:
+      "Travel guides and resources. Expert advice for destinations worldwide and digital nomad hotspots.",
     url: "https://lonelyplanet.com/?ref=nomadtools",
-    category: "community",
+    category: ["blogs", "community"],
     color: "#003C71",
     imageUrl: "/images/lonelyplanet-logo.png",
     featured: false,
@@ -685,9 +753,10 @@ export const resources: Resource[] = [
   {
     id: "travelfish",
     name: "Travelfish",
-    description: "Independent travel guide for Southeast Asia. In-depth resources for popular digital nomad destinations.",
+    description:
+      "Independent travel guide for Southeast Asia. In-depth resources for popular digital nomad destinations.",
     url: "https://travelfish.org/?ref=nomadtools",
-    category: "community",
+    category: ["blogs", "community"],
     color: "#FF9800",
     imageUrl: "/images/travelfish-logo.png",
     featured: false,
@@ -695,9 +764,10 @@ export const resources: Resource[] = [
   {
     id: "skyscanner",
     name: "Skyscanner",
-    description: "Flight comparison and booking platform. Find the best deals on flights worldwide.",
+    description:
+      "Flight comparison and booking platform. Find the best deals on flights worldwide.",
     url: "https://skyscanner.com/?ref=nomadtools",
-    category: "community",
+    category: ["flights"],
     color: "#0770E3",
     imageUrl: "/images/skyscanner-logo.png",
     featured: false,
@@ -705,9 +775,10 @@ export const resources: Resource[] = [
   {
     id: "hopper",
     name: "Hopper",
-    description: "Flight and hotel price prediction app. Save money by booking at the right time.",
+    description:
+      "Flight and hotel price prediction app. Save money by booking at the right time.",
     url: "https://hopper.com/?ref=nomadtools",
-    category: "community",
+    category: ["flights"],
     color: "#FF3366",
     imageUrl: "/images/hopper.png",
     featured: false,
@@ -715,9 +786,10 @@ export const resources: Resource[] = [
   {
     id: "flight-list",
     name: "Flight List",
-    description: "Flight deal aggregator. Find and track cheap flights to anywhere in the world.",
+    description:
+      "Flight deal aggregator. Find and track cheap flights to anywhere in the world.",
     url: "https://flightlist.io/?ref=nomadtools",
-    category: "community",
+    category: ["flights"],
     color: "#4CAF50",
     imageUrl: "/images/flightlist-logo.jpeg",
     featured: false,
@@ -725,9 +797,10 @@ export const resources: Resource[] = [
   {
     id: "onward-ticket",
     name: "Onward Ticket",
-    description: "Temporary onward flight booking service. Meet visa requirements without committing to flights.",
+    description:
+      "Temporary onward flight booking service. Meet visa requirements without committing to flights.",
     url: "https://onwardticket.com/?ref=nomadtools",
-    category: "community",
+    category: ["passport-visa"],
     color: "#673AB7",
     imageUrl: "/images/onwardticket-logo.png",
     featured: false,
@@ -735,9 +808,10 @@ export const resources: Resource[] = [
   {
     id: "onward-fly",
     name: "Onward Fly",
-    description: "Rent onward flight tickets for visa applications. 24/48 hour rental of flight reservations.",
+    description:
+      "Rent onward flight tickets for visa applications. 24/48 hour rental of flight reservations.",
     url: "https://onwardfly.com/?ref=nomadtools",
-    category: "community",
+    category: ["passport-visa"],
     color: "#009688",
     imageUrl: "/images/onwardfly-logo.png",
     featured: false,
@@ -745,9 +819,10 @@ export const resources: Resource[] = [
   {
     id: "hoodmaps",
     name: "HoodMaps",
-    description: "Crowdsourced neighborhood maps. Find the best areas for digital nomads in cities worldwide.",
+    description:
+      "Crowdsourced neighborhood maps. Find the best areas for digital nomads in cities worldwide.",
     url: "https://hoodmaps.com/?ref=nomadtools",
-    category: "community",
+    category: ["community"],
     color: "#FFC107",
     imageUrl: "/images/hoodmaps-logo.jpeg",
     featured: false,
@@ -755,9 +830,10 @@ export const resources: Resource[] = [
   {
     id: "coworker",
     name: "Coworker",
-    description: "Global coworking space directory. Find and book workspace in 170+ countries.",
+    description:
+      "Global coworking space directory. Find and book workspace in 170+ countries.",
     url: "https://coworker.com/?ref=nomadtools",
-    category: "remote-work",
+    category: ["coworking", "community"],
     color: "#00BCD4",
     imageUrl: "/images/coworker-logo.jpeg",
     featured: false,
@@ -765,9 +841,10 @@ export const resources: Resource[] = [
   {
     id: "deskpass",
     name: "Deskpass",
-    description: "Flexible workspace membership. Access coworking spaces and meeting rooms on-demand.",
+    description:
+      "Flexible workspace membership. Access coworking spaces and meeting rooms on-demand.",
     url: "https://deskpass.com/?ref=nomadtools",
-    category: "remote-work",
+    category: ["coworking", "remote-work"],
     color: "#E91E63",
     imageUrl: "/images/deskpass-logo.png",
     featured: false,
@@ -775,9 +852,10 @@ export const resources: Resource[] = [
   {
     id: "freeletics",
     name: "Freeletics",
-    description: "AI-powered fitness coaching app. Stay fit anywhere with bodyweight workouts.",
+    description:
+      "AI-powered fitness coaching app. Stay fit anywhere with bodyweight workouts.",
     url: "https://freeletics.com/?ref=nomadtools",
-    category: "health",
+    category: ["health"],
     color: "#FF5722",
     imageUrl: "/images/freeletics-logo.png",
     featured: false,
@@ -785,9 +863,10 @@ export const resources: Resource[] = [
   {
     id: "ada",
     name: "Ada",
-    description: "AI-powered health assessment app. Get personalized health insights and guidance on the go.",
+    description:
+      "AI-powered health assessment app. Get personalized health insights and guidance on the go.",
     url: "https://ada.com/?ref=nomadtools",
-    category: "health",
+    category: ["health"],
     color: "#1DE9B6",
     imageUrl: "/images/ada-logo.jpeg",
     featured: false,
@@ -795,9 +874,10 @@ export const resources: Resource[] = [
   {
     id: "working-nomads",
     name: "Working Nomads",
-    description: "Curated list of remote jobs. Daily updated positions for digital nomad professionals.",
+    description:
+      "Curated list of remote jobs. Daily updated positions for digital nomad professionals.",
     url: "https://workingnomads.co/?ref=nomadtools",
-    category: "remote-work",
+    category: ["remote-work"],
     color: "#3F51B5",
     imageUrl: "/images/workingnomads-logo.png",
     featured: false,
@@ -805,9 +885,10 @@ export const resources: Resource[] = [
   {
     id: "movingto",
     name: "MovingTo",
-    description: "Comprehensive guides and resources for relocating to different countries. Get local insights and practical advice.",
+    description:
+      "Comprehensive guides and resources for relocating to different countries. Get local insights and practical advice.",
     url: "https://movingto.com/?ref=nomadtools",
-    category: "community",
+    category: ["community"],
     color: "#4CAF50",
     imageUrl: "/images/movingto-logo.jpeg",
     featured: false,
@@ -815,9 +896,10 @@ export const resources: Resource[] = [
   {
     id: "savvy-nomad",
     name: "SavvyNomad",
-    description: "Personal finance and lifestyle guides for digital nomads. Learn to manage money while traveling.",
+    description:
+      "Personal finance and lifestyle guides for digital nomads. Learn to manage money while traveling.",
     url: "https://savvynomad.com/?ref=nomadtools",
-    category: "community",
+    category: ["community"],
     color: "#FF9800",
     imageUrl: "/images/savvynomad-logo.jpeg",
     featured: false,
@@ -825,9 +907,10 @@ export const resources: Resource[] = [
   {
     id: "crossover",
     name: "Crossover",
-    description: "High-paying remote work opportunities for top talent. Find full-time remote positions with global companies.",
+    description:
+      "High-paying remote work opportunities for top talent. Find full-time remote positions with global companies.",
     url: "https://crossover.com/?ref=nomadtools",
-    category: "remote-work",
+    category: ["remote-work"],
     color: "#2196F3",
     imageUrl: "/images/crossover-logo.jpeg",
     featured: false,
@@ -835,9 +918,10 @@ export const resources: Resource[] = [
   {
     id: "calendly",
     name: "Calendly",
-    description: "Automated scheduling software. Easily manage meetings across time zones and integrate with your calendar.",
+    description:
+      "Automated scheduling software. Easily manage meetings across time zones and integrate with your calendar.",
     url: "https://calendly.com/?ref=nomadtools",
-    category: "remote-work",
+    category: ["remote-work"],
     color: "#00A2FF",
     imageUrl: "/images/calendly-logo.jpeg",
     featured: false,
@@ -845,9 +929,10 @@ export const resources: Resource[] = [
   {
     id: "nodesk",
     name: "NoDesk",
-    description: "Curated resources for digital nomads and remote workers. Articles, tools, and job opportunities.",
+    description:
+      "Curated resources for digital nomads and remote workers. Articles, tools, and job opportunities.",
     url: "https://nodesk.co/?ref=nomadtools",
-    category: "community",
+    category: ["community"],
     color: "#333333",
     imageUrl: "/images/nodesk-logo.jpeg",
     featured: false,
@@ -855,9 +940,10 @@ export const resources: Resource[] = [
   {
     id: "destigogo",
     name: "Destigogo",
-    description: "Find and compare digital nomad destinations. Cost of living, internet speeds, and local communities.",
+    description:
+      "Find and compare digital nomad destinations. Cost of living, internet speeds, and local communities.",
     url: "https://destigogo.com/?ref=nomadtools",
-    category: "community",
+    category: ["community"],
     color: "#E91E63",
     imageUrl: "/images/destigogo-logo.jpeg",
     featured: false,
@@ -865,9 +951,10 @@ export const resources: Resource[] = [
   {
     id: "socialtel",
     name: "Socialtel",
-    description: "Social coliving spaces for digital nomads. Live and work with like-minded professionals.",
+    description:
+      "Social coliving spaces for digital nomads. Live and work with like-minded professionals.",
     url: "https://socialtel.com/?ref=nomadtools",
-    category: "accommodation",
+    category: ["accommodation"],
     color: "#9C27B0",
     imageUrl: "/images/socialtel-logo.jpeg",
     featured: false,
@@ -875,9 +962,10 @@ export const resources: Resource[] = [
   {
     id: "nomad-global",
     name: "NomadGlobal",
-    description: "Global community platform for digital nomads. Events, meetups, and networking opportunities.",
+    description:
+      "Global community platform for digital nomads. Events, meetups, and networking opportunities.",
     url: "https://nomadglobal.com/?ref=nomadtools",
-    category: "community",
+    category: ["community"],
     color: "#3F51B5",
     imageUrl: "/images/nomadglobal-logo.jpeg",
     featured: false,
@@ -885,9 +973,10 @@ export const resources: Resource[] = [
   {
     id: "moving-nomads",
     name: "Moving Nomads",
-    description: "Relocation services for digital nomads. Help with visas, accommodation, and settling in new countries.",
+    description:
+      "Relocation services for digital nomads. Help with visas, accommodation, and settling in new countries.",
     url: "https://movingnomads.com/?ref=nomadtools",
-    category: "community",
+    category: ["community"],
     color: "#FF5722",
     imageUrl: "/images/movingnomads-logo.jpeg",
     featured: false,
@@ -895,9 +984,10 @@ export const resources: Resource[] = [
   {
     id: "meetup",
     name: "Meetup",
-    description: "Find local digital nomad and expat groups. Join events and connect with communities worldwide.",
+    description:
+      "Find local digital nomad and expat groups. Join events and connect with communities worldwide.",
     url: "https://meetup.com/?ref=nomadtools",
-    category: "community",
+    category: ["community"],
     color: "#E51937",
     imageUrl: "/images/meetup-logo.jpeg",
     featured: false,
@@ -905,9 +995,10 @@ export const resources: Resource[] = [
   {
     id: "luma",
     name: "Luma",
-    description: "Global health insurance for remote teams. Comprehensive coverage for distributed companies.",
+    description:
+      "Global health insurance for remote teams. Comprehensive coverage for distributed companies.",
     url: "https://luma.com/?ref=nomadtools",
-    category: "insurance",
+    category: ["community"],
     color: "#00BFA5",
     imageUrl: "/images/luma-logo.jpeg",
     featured: false,
@@ -915,9 +1006,10 @@ export const resources: Resource[] = [
   {
     id: "nomad-cruise",
     name: "Nomad Cruise",
-    description: "Work and travel on cruise ships. Join conferences and networking events while exploring the world.",
+    description:
+      "Work and travel on cruise ships. Join conferences and networking events while exploring the world.",
     url: "https://nomadcruise.com/?ref=nomadtools",
-    category: "community",
+    category: ["retreats", "community", "coworking"],
     color: "#1565C0",
     imageUrl: "/images/nomadcruise-logo.png",
     featured: false,
@@ -925,9 +1017,10 @@ export const resources: Resource[] = [
   {
     id: "remote-explorers",
     name: "Remote Explorers",
-    description: "Community-driven platform for remote work adventures. Group trips and experiences for digital nomads.",
+    description:
+      "Community-driven platform for remote work adventures. Group trips and experiences for digital nomads.",
     url: "https://remoteexplorers.com/?ref=nomadtools",
-    category: "community",
+    category: ["retreats", "community"],
     color: "#43A047",
     imageUrl: "/images/remoteexplorers-logo.jpeg",
     featured: false,
@@ -935,9 +1028,10 @@ export const resources: Resource[] = [
   {
     id: "betterhelp",
     name: "BetterHelp",
-    description: "Online counseling and therapy platform. Access mental health support from anywhere in the world.",
+    description:
+      "Online counseling and therapy platform. Access mental health support from anywhere in the world.",
     url: "https://betterhelp.com/?ref=nomadtools",
-    category: "health",
+    category: ["health"],
     color: "#2196F3",
     imageUrl: "/images/betterhelp-logo.jpeg",
     featured: false,
@@ -945,9 +1039,10 @@ export const resources: Resource[] = [
   {
     id: "talkspace",
     name: "Talkspace",
-    description: "Online therapy platform. Connect with licensed therapists while traveling and working remotely.",
+    description:
+      "Online therapy platform. Connect with licensed therapists while traveling and working remotely.",
     url: "https://talkspace.com/?ref=nomadtools",
-    category: "health",
+    category: ["health"],
     color: "#7986CB",
     imageUrl: "/images/talkspace-logo.jpeg",
     featured: false,
@@ -955,11 +1050,265 @@ export const resources: Resource[] = [
   {
     id: "wellfound",
     name: "Wellfound",
-    description: "Find startup jobs and opportunities. Connect with innovative companies hiring remote talent.",
+    description:
+      "Find startup jobs and opportunities. Connect with innovative companies hiring remote talent.",
     url: "https://wellfound.com/?ref=nomadtools",
-    category: "remote-work",
+    category: ["remote-work"],
     color: "#000000",
     imageUrl: "/images/wellfound-logo.jpeg",
     featured: false,
   },
-]
+  {
+    id: "nomadic",
+    name: "Nomadic",
+    description:
+      "Digital nomad community and resources. Find accommodation, coworking spaces, and connect with fellow nomads.",
+    url: "https://nomadic.com/?ref=nomadtools",
+    category: ["community"],
+    color: "#FF6B6B",
+    imageUrl: "/images/nomadic-logo.jpeg",
+    featured: false,
+  },
+  {
+    id: "priority-pass",
+    name: "Priority Pass",
+    description:
+      "Access to airport lounges worldwide. Relax and work in comfort during layovers and delays.",
+    url: "https://prioritypass.com/?ref=nomadtools",
+    category: ["flights"],
+    color: "#1E88E5",
+    imageUrl: "/images/prioritypass-logo.jpeg",
+    featured: false,
+  },
+  {
+    id: "going-global",
+    name: "Going Global",
+    description:
+      "International job search and career development platform. Find opportunities abroad.",
+    url: "https://goingglobal.com/?ref=nomadtools",
+    category: ["remote-work"],
+    color: "#43A047",
+    imageUrl: "/images/goingglobal-logo.jpeg",
+    featured: false,
+  },
+  {
+    id: "landing",
+    name: "Landing",
+    description:
+      "Flexible furnished apartments for remote workers. Month-to-month rentals with no long-term commitment.",
+    url: "https://landing.com/?ref=nomadtools",
+    category: ["accommodation"],
+    color: "#00BCD4",
+    imageUrl: "/images/landing-logo.jpeg",
+    featured: false,
+  },
+  {
+    id: "furnished-finder",
+    name: "Furnished Finder",
+    description:
+      "Find furnished rentals for short and long-term stays. Perfect for digital nomads and traveling professionals.",
+    url: "https://furnishedfinder.com/?ref=nomadtools",
+    category: ["accommodation"],
+    color: "#FF9800",
+    imageUrl: "/images/furnishedfinder-logo.jpeg",
+    featured: false,
+  },
+  {
+    id: "instabridge",
+    name: "Instabridge",
+    description:
+      "Find and share WiFi passwords worldwide. Stay connected in cafes, restaurants, and public spaces.",
+    url: "https://instabridge.com/?ref=nomadtools",
+    category: ["connectivity"],
+    color: "#2196F3",
+    imageUrl: "/images/instabridge-logo.jpeg",
+    featured: false,
+  },
+  {
+    id: "getnomad",
+    name: "GetNomad",
+    description:
+      "Find and book coliving spaces worldwide. Live and work with like-minded digital nomads.",
+    url: "https://getnomad.app/?ref=nomadtools",
+    category: ["accommodation"],
+    color: "#4CAF50",
+    imageUrl: "/images/getnomad-logo.jpeg",
+    featured: false,
+  },
+  {
+    id: "citymapper",
+    name: "Citymapper",
+    description:
+      "Urban transport app for cities worldwide. Find the best routes using public transport and ride-sharing.",
+    url: "https://citymapper.com/?ref=nomadtools",
+    category: ["guides"],
+    color: "#FFC107",
+    imageUrl: "/images/citymapper-logo.png",
+    featured: false,
+  },
+  {
+    id: "autio",
+    name: "Autio",
+    description:
+      "Audio travel guides for your journey. Learn about destinations while on the move.",
+    url: "https://autio.com/?ref=nomadtools",
+    category: ["guides"],
+    color: "#9C27B0",
+    imageUrl: "/images/autio-logo.png",
+    featured: false,
+  },
+  {
+    id: "atm-fee-saver",
+    name: "ATM Fee Saver",
+    description:
+      "Find fee-free ATMs worldwide. Save money on international withdrawals.",
+    url: "https://atmfeesaver.com/?ref=nomadtools",
+    category: ["banking"],
+    color: "#00BCD4",
+    imageUrl: "/images/atmfeesaver-logo.jpeg",
+    featured: false,
+  },
+  {
+    id: "ding",
+    name: "Ding",
+    description:
+      "Top up mobile phones worldwide. Send credit to any phone number instantly.",
+    url: "https://ding.com/?ref=nomadtools",
+    category: ["connectivity"],
+    color: "#E91E63",
+    imageUrl: "/images/ding-logo.jpeg",
+    featured: false,
+  },
+  {
+    id: "nbases",
+    name: "nBases",
+    description:
+      "Find and review coworking spaces worldwide. Verified workspaces with reliable internet.",
+    url: "https://nbases.com/?ref=nomadtools",
+    category: ["coworking", "community"],
+    color: "#3F51B5",
+    imageUrl: "/images/nbases-logo.jpeg",
+    featured: false,
+  },
+  {
+    id: "tripoffice",
+    name: "TripOffice",
+    description:
+      "Find and book coworking spaces and offices worldwide. Daily and monthly rentals available.",
+    url: "https://tripoffice.com/?ref=nomadtools",
+    category: ["remote-work"],
+    color: "#FF5722",
+    imageUrl: "/images/tripoffice-logo.jpeg",
+    featured: false,
+  },
+  {
+    id: "wifi-map",
+    name: "Wifi Map",
+    description:
+      "Find WiFi hotspots worldwide. Access passwords shared by the community.",
+    url: "https://wifimap.io/?ref=nomadtools",
+    category: ["connectivity"],
+    color: "#2196F3",
+    imageUrl: "/images/wifimap-logo.jpeg",
+    featured: false,
+  },
+  {
+    id: "wired-nomad",
+    name: "The Wired Nomad",
+    description:
+      "Digital nomad lifestyle blog and resources. Tips, guides, and community insights.",
+    url: "https://wirednomad.com/?ref=nomadtools",
+    category: ["blogs", "community"],
+    color: "#795548",
+    imageUrl: "/images/wirednomad-logo.jpeg",
+    featured: false,
+  },
+  {
+    id: "engine",
+    name: "Engine",
+    description:
+      "Find and book coworking spaces worldwide. Access to meeting rooms and office amenities.",
+    url: "https://engine.com/?ref=nomadtools",
+    category: ["coworking", "remote-work"],
+    color: "#607D8B",
+    imageUrl: "/images/engine-logo.jpeg",
+    featured: false,
+  },
+  {
+    id: "hotel-planner",
+    name: "Hotel Planner",
+    description:
+      "Find and book accommodations worldwide. Group bookings and long-term stays available.",
+    url: "https://hotelplanner.com/?ref=nomadtools",
+    category: ["accommodation"],
+    color: "#009688",
+    imageUrl: "/images/hotelplanner-logo.jpeg",
+    featured: false,
+  },
+  {
+    id: "worksploring",
+    name: "Worksploring",
+    description:
+      "Find and book coworking spaces and coliving accommodations worldwide.",
+    url: "https://worksploring.com/?ref=nomadtools",
+    category: ["coworking", "accommodation"],
+    color: "#673AB7",
+    imageUrl: "/images/worksploring-logo.jpeg",
+    featured: false,
+  },
+  {
+    id: "higlobe",
+    name: "HiGlobe",
+    description:
+      "Connect with locals and expats worldwide. Find accommodation, events, and local insights.",
+    url: "https://higlobe.com/?ref=nomadtools",
+    category: ["community"],
+    color: "#FF4081",
+    imageUrl: "/images/higlobe-logo.jpeg",
+    featured: false,
+  },
+  {
+    id: "breeze-sim",
+    name: "Breeze SIM",
+    description:
+      "Data roaming is easy with breeze eSIM. No need to deal with plastic SIM cards, get a new number or sign up to a contract. Surf anywhere, any time.",
+    url: "https://breezesim.com/?ref=nomadtools",
+    category: ["connectivity"],
+    color: "#00BCD4",
+    imageUrl: "/images/breezesim-logo.jpeg",
+    featured: false,
+  },
+  {
+    id: "outside",
+    name: "Outside",
+    description:
+      "Find outdoor activities and adventures worldwide. Connect with local guides and communities.",
+    url: "https://outside.com/?ref=nomadtools",
+    category: ["community"],
+    color: "#4CAF50",
+    imageUrl: "/images/outside-logo.jpeg",
+    featured: false,
+  },
+  {
+    id: "nomadsj",
+    name: "Nomadsj",
+    description:
+      "Digital nomad community and job board. Find remote work and connect with fellow nomads.",
+    url: "https://nomadsj.com/?ref=nomadtools",
+    category: ["community"],
+    color: "#FF9800",
+    imageUrl: "/images/nomadsj-logo.jpeg",
+    featured: false,
+  },
+  {
+    id: "nomadable",
+    name: "Nomadable",
+    description:
+      "Find cafes & coworking spaces with high-speed WiFi",
+    url: "https://nomadable.net/?ref=nomadtools",
+    category: ["coworking", "community"],
+    color: "#2196F3",
+    imageUrl: "/images/nomadable-logo.png",
+    featured: false,
+  },
+];

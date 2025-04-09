@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "Digital Nomad Tools",
+  name: "nomadtools - Digital Nomad Tools & Resources",
   description: "Discover curated resources for remote workers and digital nomads to live, work, and thrive from anywhere in the world.",
   url: "https://digitalnomadtools.dev",
   ogImage: "https://digitalnomadtools.dev/og.png",
