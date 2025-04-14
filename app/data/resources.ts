@@ -25,13 +25,14 @@ export const categories: Category[] = [
   { id: "connectivity", name: "Connectivity" },
   { id: "community", name: "Community" },
   { id: "flights", name: "Flights" },
-  { id: "passport-visa", name: "Passport & Visa" }, 
+  { id: "passport-visa", name: "Passport & Visa" },
   { id: "coworking", name: "Coworking" },
   { id: "gears", name: "Gears & Gadgets" },
   { id: "retreats", name: "Retreats" },
   { id: "books", name: "Books" },
   { id: "blogs", name: "Blogs" },
   { id: "guides", name: "Travel Guides" },
+  { id: "relocation", name: "Relocation" },
 ];
 
 export const resources: Resource[] = [
@@ -454,17 +455,6 @@ export const resources: Resource[] = [
     featured: false,
   },
   {
-    id: "posthog",
-    name: "PostHog",
-    description:
-      "Open-source product analytics. Understand user behavior and improve your digital products.",
-    url: "https://posthog.com/?ref=nomadtools",
-    category: ["remote-work"],
-    color: "#6366F1",
-    imageUrl: "/images/posthog-logo.jpeg",
-    featured: false,
-  },
-  {
     id: "relay",
     name: "Relay",
     description:
@@ -512,33 +502,11 @@ export const resources: Resource[] = [
     id: "growth-bundle",
     name: "Growth Bundle",
     description:
-      "Curated collection of tools and resources for digital nomads. Boost productivity and business growth.",
+      "The Growth Bundle is a curated set of award winning apps for self-care, mental health and productivity, bundled together under a single subscription. Become your best self.",
     url: "https://growthbundle.com/?ref=nomadtools",
-    category: ["remote-work"],
+    category: ["health", "retreats"],
     color: "#F59E0B",
     imageUrl: "/images/growthbundle-logo.jpeg",
-    featured: false,
-  },
-  {
-    id: "todoist",
-    name: "Todoist",
-    description:
-      "Task management and productivity app. Organize work and personal projects across devices.",
-    url: "https://todoist.com/?ref=nomadtools",
-    category: ["remote-work"],
-    color: "#E44332",
-    imageUrl: "/images/todoist-logo.png",
-    featured: false,
-  },
-  {
-    id: "taly",
-    name: "Taly",
-    description:
-      "TALY turns manual, repetitve, and mundane tasks into an automated, streamlined, and efficient process that reduces costs and improves productivity.",
-    url: "https://wearetaly.com/?ref=nomadtools",
-    category: ["remote-work"],
-    color: "#6366F1",
-    imageUrl: "/images/taly-logo.png",
     featured: false,
   },
   {
@@ -800,7 +768,7 @@ export const resources: Resource[] = [
     description:
       "Temporary onward flight booking service. Meet visa requirements without committing to flights.",
     url: "https://onwardticket.com/?ref=nomadtools",
-    category: ["passport-visa"],
+    category: ["flights"],
     color: "#673AB7",
     imageUrl: "/images/onwardticket-logo.png",
     featured: false,
@@ -811,7 +779,7 @@ export const resources: Resource[] = [
     description:
       "Rent onward flight tickets for visa applications. 24/48 hour rental of flight reservations.",
     url: "https://onwardfly.com/?ref=nomadtools",
-    category: ["passport-visa"],
+    category: ["flights"],
     color: "#009688",
     imageUrl: "/images/onwardfly-logo.png",
     featured: false,
@@ -916,17 +884,6 @@ export const resources: Resource[] = [
     featured: false,
   },
   {
-    id: "calendly",
-    name: "Calendly",
-    description:
-      "Automated scheduling software. Easily manage meetings across time zones and integrate with your calendar.",
-    url: "https://calendly.com/?ref=nomadtools",
-    category: ["remote-work"],
-    color: "#00A2FF",
-    imageUrl: "/images/calendly-logo.jpeg",
-    featured: false,
-  },
-  {
     id: "nodesk",
     name: "NoDesk",
     description:
@@ -976,9 +933,9 @@ export const resources: Resource[] = [
     description:
       "Relocation services for digital nomads. Help with visas, accommodation, and settling in new countries.",
     url: "https://movingnomads.com/?ref=nomadtools",
-    category: ["community"],
+    category: ["relocation", "passport-visa"],
     color: "#FF5722",
-    imageUrl: "/images/movingnomads-logo.jpeg",
+    imageUrl: "/images/movingnomads-logo.png",
     featured: false,
   },
   {
@@ -1033,7 +990,7 @@ export const resources: Resource[] = [
     url: "https://betterhelp.com/?ref=nomadtools",
     category: ["health"],
     color: "#2196F3",
-    imageUrl: "/images/betterhelp-logo.jpeg",
+    imageUrl: "/images/betterhelp-logo.png",
     featured: false,
   },
   {
@@ -1044,7 +1001,7 @@ export const resources: Resource[] = [
     url: "https://talkspace.com/?ref=nomadtools",
     category: ["health"],
     color: "#7986CB",
-    imageUrl: "/images/talkspace-logo.jpeg",
+    imageUrl: "/images/talkspace-logo.png",
     featured: false,
   },
   {
@@ -1055,7 +1012,7 @@ export const resources: Resource[] = [
     url: "https://wellfound.com/?ref=nomadtools",
     category: ["remote-work"],
     color: "#000000",
-    imageUrl: "/images/wellfound-logo.jpeg",
+    imageUrl: "/images/wellfound-logo.png",
     featured: false,
   },
   {
@@ -1077,7 +1034,7 @@ export const resources: Resource[] = [
     url: "https://prioritypass.com/?ref=nomadtools",
     category: ["flights"],
     color: "#1E88E5",
-    imageUrl: "/images/prioritypass-logo.jpeg",
+    imageUrl: "/images/prioritypass-logo.png",
     featured: false,
   },
   {
@@ -1085,8 +1042,8 @@ export const resources: Resource[] = [
     name: "Going Global",
     description:
       "International job search and career development platform. Find opportunities abroad.",
-    url: "https://goingglobal.com/?ref=nomadtools",
-    category: ["remote-work"],
+    url: "https://goingglobal.io/?ref=nomadtools",
+    category: ["relocation", "passport-visa"],
     color: "#43A047",
     imageUrl: "/images/goingglobal-logo.jpeg",
     featured: false,
@@ -1096,10 +1053,10 @@ export const resources: Resource[] = [
     name: "Landing",
     description:
       "Flexible furnished apartments for remote workers. Month-to-month rentals with no long-term commitment.",
-    url: "https://landing.com/?ref=nomadtools",
+    url: "https://hellolanding.com/?ref=nomadtools",
     category: ["accommodation"],
     color: "#00BCD4",
-    imageUrl: "/images/landing-logo.jpeg",
+    imageUrl: "/images/landing-logo.png",
     featured: false,
   },
   {
@@ -1118,7 +1075,7 @@ export const resources: Resource[] = [
     name: "Instabridge",
     description:
       "Find and share WiFi passwords worldwide. Stay connected in cafes, restaurants, and public spaces.",
-    url: "https://instabridge.com/?ref=nomadtools",
+    url: "https://www2.instabridge.com/?ref=nomadtools",
     category: ["connectivity"],
     color: "#2196F3",
     imageUrl: "/images/instabridge-logo.jpeg",
@@ -1161,18 +1118,18 @@ export const resources: Resource[] = [
     id: "atm-fee-saver",
     name: "ATM Fee Saver",
     description:
-      "Find fee-free ATMs worldwide. Save money on international withdrawals.",
+      "First mobile app to find fee-free ATMs in 100+ countries with foreign ATM fees, withdrawal limits, forex places, emergency numbers, visa info.",
     url: "https://atmfeesaver.com/?ref=nomadtools",
-    category: ["banking"],
+    category: ["banking", "connectivity", "passport-visa"],
     color: "#00BCD4",
-    imageUrl: "/images/atmfeesaver-logo.jpeg",
+    imageUrl: "/images/atmfeesaver-logo.png",
     featured: false,
   },
   {
     id: "ding",
     name: "Ding",
     description:
-      "Top up mobile phones worldwide. Send credit to any phone number instantly.",
+      "Top up mobile phones worldwide. Send credit to any phone number instantly. The fastest way to send mobile top-up worldwide",
     url: "https://ding.com/?ref=nomadtools",
     category: ["connectivity"],
     color: "#E91E63",
@@ -1183,29 +1140,29 @@ export const resources: Resource[] = [
     id: "nbases",
     name: "nBases",
     description:
-      "Find and review coworking spaces worldwide. Verified workspaces with reliable internet.",
+      "Find the best Airbnbs for digital nomads on nBases.com and with our Chrome extension.",
     url: "https://nbases.com/?ref=nomadtools",
-    category: ["coworking", "community"],
+    category: ["accommodation"],
     color: "#3F51B5",
-    imageUrl: "/images/nbases-logo.jpeg",
+    imageUrl: "/images/nbases-logo.jpg",
     featured: false,
   },
   {
     id: "tripoffice",
     name: "TripOffice",
     description:
-      "Find and book coworking spaces and offices worldwide. Daily and monthly rentals available.",
+      "Search nomad-friendly hotels with workspaces. Discover best countries and cities for digital nomads.",
     url: "https://tripoffice.com/?ref=nomadtools",
-    category: ["remote-work"],
+    category: ["accommodation", "coworking"],
     color: "#FF5722",
-    imageUrl: "/images/tripoffice-logo.jpeg",
+    imageUrl: "/images/tripoffice-logo.png",
     featured: false,
   },
   {
     id: "wifi-map",
     name: "Wifi Map",
     description:
-      "Find WiFi hotspots worldwide. Access passwords shared by the community.",
+      "Find free WiFi hotspots with WiFi Map and get internet access wherever you travel! We provide access to over 150M+ hotspots worldwide and eSIM & VPN.",
     url: "https://wifimap.io/?ref=nomadtools",
     category: ["connectivity"],
     color: "#2196F3",
@@ -1216,18 +1173,18 @@ export const resources: Resource[] = [
     id: "wired-nomad",
     name: "The Wired Nomad",
     description:
-      "Digital nomad lifestyle blog and resources. Tips, guides, and community insights.",
-    url: "https://wirednomad.com/?ref=nomadtools",
-    category: ["blogs", "community"],
+      "A website for digital nomads to find accommodations with fast, verified internet speeds.",
+    url: "https://thewirednomad.com/?ref=nomadtools",
+    category: ["accommodation"],
     color: "#795548",
-    imageUrl: "/images/wirednomad-logo.jpeg",
+    imageUrl: "/images/thewirednomad-logo.jpeg",
     featured: false,
   },
   {
     id: "engine",
     name: "Engine",
     description:
-      "Find and book coworking spaces worldwide. Access to meeting rooms and office amenities.",
+      "Engine is the modern travel platform for booking and managing work trips. It saves businesses time and money through an intuitive travel network.",
     url: "https://engine.com/?ref=nomadtools",
     category: ["coworking", "remote-work"],
     color: "#607D8B",
@@ -1238,7 +1195,7 @@ export const resources: Resource[] = [
     id: "hotel-planner",
     name: "Hotel Planner",
     description:
-      "Find and book accommodations worldwide. Group bookings and long-term stays available.",
+      "Find Your Perfect Stay with HotelPlanner ✨ Discover tips, deals, and inspo for your next trip.",
     url: "https://hotelplanner.com/?ref=nomadtools",
     category: ["accommodation"],
     color: "#009688",
@@ -1249,20 +1206,20 @@ export const resources: Resource[] = [
     id: "worksploring",
     name: "Worksploring",
     description:
-      "Find and book coworking spaces and coliving accommodations worldwide.",
+      "Worksploring provides essential information on over 600 cities, a supportive community, and valuable resources to help you work remotely.",
     url: "https://worksploring.com/?ref=nomadtools",
     category: ["coworking", "accommodation"],
     color: "#673AB7",
-    imageUrl: "/images/worksploring-logo.jpeg",
+    imageUrl: "/images/worksploring-logo.png",
     featured: false,
   },
   {
     id: "higlobe",
     name: "HiGlobe",
     description:
-      "Connect with locals and expats worldwide. Find accommodation, events, and local insights.",
+      "With Higlobe, your US receiving account and receiving payments from US companies is free.",
     url: "https://higlobe.com/?ref=nomadtools",
-    category: ["community"],
+    category: ["banking"],
     color: "#FF4081",
     imageUrl: "/images/higlobe-logo.jpeg",
     featured: false,
@@ -1275,40 +1232,50 @@ export const resources: Resource[] = [
     url: "https://breezesim.com/?ref=nomadtools",
     category: ["connectivity"],
     color: "#00BCD4",
-    imageUrl: "/images/breezesim-logo.jpeg",
-    featured: false,
-  },
-  {
-    id: "outside",
-    name: "Outside",
-    description:
-      "Find outdoor activities and adventures worldwide. Connect with local guides and communities.",
-    url: "https://outside.com/?ref=nomadtools",
-    category: ["community"],
-    color: "#4CAF50",
-    imageUrl: "/images/outside-logo.jpeg",
+    imageUrl: "/images/breezesim-logo.png",
     featured: false,
   },
   {
     id: "nomadsj",
     name: "Nomadsj",
     description:
-      "Digital nomad community and job board. Find remote work and connect with fellow nomads.",
+      "All-in-one platform for nomads. Add your experiences to the map. Find nomads near you. Discover ways to earn income. Share your journey on your timeline.",
     url: "https://nomadsj.com/?ref=nomadtools",
     category: ["community"],
     color: "#FF9800",
-    imageUrl: "/images/nomadsj-logo.jpeg",
+    imageUrl: "/images/nomadsj-logo.jpg",
     featured: false,
   },
   {
     id: "nomadable",
     name: "Nomadable",
-    description:
-      "Find cafes & coworking spaces with high-speed WiFi",
+    description: "Find cafes & coworking spaces with high-speed WiFi",
     url: "https://nomadable.net/?ref=nomadtools",
     category: ["coworking", "community"],
     color: "#2196F3",
     imageUrl: "/images/nomadable-logo.png",
+    featured: false,
+  },
+  {
+    id: "relocate-me",
+    name: "Relocate.me",
+    description:
+      "Relocate.me is a platform that helps you find the perfect place to live and work abroad. Thinking about moving abroad? Relocate.me has everything you need to make an informed relocation decision and start your expat journey.",
+    url: "https://relocate.me/?ref=nomadtools",
+    category: ["relocation", "passport-visa"],
+    color: "#43A047",
+    imageUrl: "/images/relocate-me-logo.png",
+    featured: false,
+  },
+  {
+    id: "digital-nomad-handbook",
+    name: "The Digital Nomad Handbook",
+    description:
+      "A practical guide inspiring and motivating people to achieve their goal of travelling more, starting a whole new way of living and creating a flexible work/life balance.",
+    url: "https://shop.lonelyplanet.com/products/the-digital-nomad-handbook/?ref=nomadtools",
+    category: ["books"],
+    color: "#43A047",
+    imageUrl: "/images/thedigitalnomadhandbook-logo.webp",
     featured: false,
   },
 ];
