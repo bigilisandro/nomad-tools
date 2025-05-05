@@ -9,7 +9,6 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 // Resource submission validation schema
 const resourceSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address" }),
-  author: z.string().min(1, { message: "Author name is required" }),
   resourceName: z.string().min(1, { message: "Resource name is required" }),
   category: z.string().min(1, { message: "Please select a category" }),
   description: z.string().min(10, { message: "Description must be at least 10 characters" }),
@@ -39,7 +38,7 @@ export async function submitResource(prevState: ResourceFormState, formData: For
   // Validate form data
   const validationResult = resourceSchema.safeParse(data)
   if (!validationResult.success) {
-    const errors = {}
+    const errors: Record<string, string> = {}
     validationResult.error.errors.forEach((error) => {
       errors[error.path[0]] = error.message
     })

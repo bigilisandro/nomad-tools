@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Dialog, DialogContent } from "@/components/ui/dialog"
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from "@/components/ui/command"
 import { Search } from "lucide-react"
 import { resources, categories } from "@/app/data/resources"
@@ -48,6 +48,7 @@ export function SearchDialog({
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent className="p-0 max-w-3xl" role="dialog" aria-label="Search resources">
+        <DialogTitle className="sr-only">Search Resources</DialogTitle>
         <Command className="rounded-lg border shadow-md" shouldFilter={false}>
           <CommandInput
             placeholder="Search resources..."

@@ -1,22 +1,28 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Button } from "@/components/ui/button"
-import { Upload, Star, CheckCircle2, AlertCircle, Loader2 } from "lucide-react"
-import { categories } from "@/app/data/resources"
-import { Navbar } from "@/components/navbar"
-import { ResourceCard } from "@/components/resource-card"
-import { Footer } from "@/components/footer"
-import { useActionState } from "react"
-import { submitResource, type ResourceFormState } from "@/app/actions/submit-resource"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { Upload, Star, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { categories } from "@/app/data/resources";
+import { Navbar } from "@/components/navbar";
+import { ResourceCard } from "@/components/resource-card";
+import { Footer } from "@/components/footer";
+import { useActionState } from "react";
+import {
+  submitResource,
+  type ResourceFormState,
+} from "@/app/actions/submit-resource";
 
-const initialState: ResourceFormState = {}
+const initialState: ResourceFormState = {};
 
 export default function SubmitPage() {
-  const [state, formAction, isPending] = useActionState(submitResource, initialState)
+  const [state, formAction, isPending] = useActionState(
+    submitResource,
+    initialState
+  );
 
   const [formData, setFormData] = useState({
     email: "",
@@ -28,7 +34,7 @@ export default function SubmitPage() {
     logo: null,
     logoPreview: "",
     color: "#5ECBC1", // Default color
-  })
+  });
 
   // Update form data if there are validation errors
   useEffect(() => {
@@ -36,7 +42,7 @@ export default function SubmitPage() {
       setFormData((prevData) => ({
         ...prevData,
         ...state.data,
-      }))
+      }));
     }
 
     // Reset form on successful submission
@@ -51,39 +57,39 @@ export default function SubmitPage() {
         logo: null,
         logoPreview: "",
         color: "#5ECBC1",
-      })
+      });
     }
-  }, [state])
+  }, [state]);
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
-    }))
-  }
+    }));
+  };
 
-  const handleLogoChange = (e) => {
-    const file = e.target.files[0]
+  const handleLogoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
     if (file) {
-      const reader = new FileReader()
+      const reader = new FileReader();
       reader.onloadend = () => {
         setFormData((prev) => ({
           ...prev,
           logo: file,
-          logoPreview: reader.result,
-        }))
-      }
-      reader.readAsDataURL(file)
+          logoPreview: reader.result as string,
+        }));
+      };
+      reader.readAsDataURL(file);
     }
-  }
+  };
 
-  const handleColorChange = (e) => {
+  const handleColorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData((prev) => ({
       ...prev,
       color: e.target.value,
-    }))
-  }
+    }));
+  };
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -121,31 +127,22 @@ export default function SubmitPage() {
                       }`}
                       required
                     />
-                    {state.errors?.email && <p className="text-xs text-red-500">{state.errors.email}</p>}
-                    <p className="text-xs text-gray-400">We'll use this to create your account.</p>
-                  </div>
-
-                  <div className="space-y-2">
-                    <label htmlFor="author" className="text-sm font-medium">
-                      Author
-                    </label>
-                    <Input
-                      id="author"
-                      name="author"
-                      placeholder="Your name or company"
-                      value={formData.author}
-                      onChange={handleInputChange}
-                      className={`bg-[#2d3748] border-[#4a5568] text-white ${
-                        state.errors?.author ? "border-red-500" : ""
-                      }`}
-                      required
-                    />
-                    {state.errors?.author && <p className="text-xs text-red-500">{state.errors.author}</p>}
+                    {state.errors?.email && (
+                      <p className="text-xs text-red-500">
+                        {state.errors.email}
+                      </p>
+                    )}
+                    <p className="text-xs text-gray-400">
+                      We'll use this to create your account.
+                    </p>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <label htmlFor="resourceName" className="text-sm font-medium">
+                      <label
+                        htmlFor="resourceName"
+                        className="text-sm font-medium"
+                      >
                         Resource name
                       </label>
                       <Input
@@ -160,7 +157,9 @@ export default function SubmitPage() {
                         required
                       />
                       {state.errors?.resourceName && (
-                        <p className="text-xs text-red-500">{state.errors.resourceName}</p>
+                        <p className="text-xs text-red-500">
+                          {state.errors.resourceName}
+                        </p>
                       )}
                     </div>
                     <div className="space-y-2">
@@ -174,8 +173,7 @@ export default function SubmitPage() {
                         onChange={handleInputChange}
                         className={`flex h-10 w-full rounded-md border border-[#4a5568] bg-[#2d3748] px-3 py-2 text-sm text-white ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ${
                           state.errors?.category ? "border-red-500" : ""
-                        }`}
-                        required
+                        }`}                        required
                       >
                         <option value="">Select a category</option>
                         {categories
@@ -186,7 +184,11 @@ export default function SubmitPage() {
                             </option>
                           ))}
                       </select>
-                      {state.errors?.category && <p className="text-xs text-red-500">{state.errors.category}</p>}
+                      {state.errors?.category && (
+                        <p className="text-xs text-red-500">
+                          {state.errors.category}
+                        </p>
+                      )}
                     </div>
                   </div>
 
@@ -211,14 +213,20 @@ export default function SubmitPage() {
                         }`}
                       />
                     </div>
-                    {state.errors?.color && <p className="text-xs text-red-500">{state.errors.color}</p>}
+                    {state.errors?.color && (
+                      <p className="text-xs text-red-500">
+                        {state.errors.color}
+                      </p>
+                    )}
                   </div>
 
                   <div className="space-y-2">
                     <label className="text-sm font-medium">Logo</label>
                     <div
                       className="border-2 border-dashed border-[#4a5568] rounded-lg p-8 text-center cursor-pointer hover:bg-[#2d3748]/50 transition-colors"
-                      onClick={() => document.getElementById("logo-upload").click()}
+                      onClick={() =>
+                        document.getElementById("logo-upload").click()
+                      }
                     >
                       <input
                         id="logo-upload"
@@ -229,14 +237,20 @@ export default function SubmitPage() {
                       />
                       <Upload className="mx-auto h-10 w-10 text-gray-400 mb-2" />
                       <p className="text-sm text-gray-400">
-                        Drop your logo here, or <span className="text-primary">browse</span>
+                        Drop your logo here, or{" "}
+                        <span className="text-primary">browse</span>
                       </p>
-                      <p className="text-xs text-gray-500 mt-1">PNG, JPG or SVG, max 2MB</p>
+                      <p className="text-xs text-gray-500 mt-1">
+                        PNG, JPG or SVG, max 2MB
+                      </p>
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="description" className="text-sm font-medium">
+                    <label
+                      htmlFor="description"
+                      className="text-sm font-medium"
+                    >
                       Description
                     </label>
                     <Textarea
@@ -250,7 +264,11 @@ export default function SubmitPage() {
                       }`}
                       required
                     />
-                    {state.errors?.description && <p className="text-xs text-red-500">{state.errors.description}</p>}
+                    {state.errors?.description && (
+                      <p className="text-xs text-red-500">
+                        {state.errors.description}
+                      </p>
+                    )}
                   </div>
 
                   <div className="space-y-2">
@@ -268,8 +286,14 @@ export default function SubmitPage() {
                       }`}
                       required
                     />
-                    {state.errors?.websiteUrl && <p className="text-xs text-red-500">{state.errors.websiteUrl}</p>}
-                    <p className="text-xs text-gray-400">The resource's homepage</p>
+                    {state.errors?.websiteUrl && (
+                      <p className="text-xs text-red-500">
+                        {state.errors.websiteUrl}
+                      </p>
+                    )}
+                    <p className="text-xs text-gray-400">
+                      The resource's homepage
+                    </p>
                   </div>
 
                   <Button type="submit" className="w-full" disabled={isPending}>
@@ -298,7 +322,10 @@ export default function SubmitPage() {
                 <div className="bg-[#111827] rounded-lg p-6">
                   <ResourceCard
                     name={formData.resourceName || "Your Resource Name"}
-                    description={formData.description || "Your resource description will appear here..."}
+                    description={
+                      formData.description ||
+                      "Your resource description will appear here..."
+                    }
                     url={formData.websiteUrl || "#"}
                     category={formData.category || ""}
                     color={formData.color}
@@ -307,19 +334,27 @@ export default function SubmitPage() {
                   />
 
                   <div className="mt-8">
-                    <h3 className="text-lg font-semibold mb-4">Want to stand out?</h3>
+                    <h3 className="text-lg font-semibold mb-4">
+                      Want to stand out?
+                    </h3>
                     <div className="bg-[#2d3748] rounded-lg p-4 mb-4">
                       <div className="flex items-start gap-3">
                         <Star className="h-5 w-5 text-primary fill-primary mt-0.5" />
                         <div>
-                          <h4 className="font-medium">Featured Listing - $49</h4>
+                          <h4 className="font-medium">
+                            Featured Listing - $49
+                          </h4>
                           <p className="text-sm text-gray-400">
-                            Get a star badge and priority placement in your category.
+                            Get a star badge and priority placement in your
+                            category.
                           </p>
                         </div>
                       </div>
                     </div>
-                    <Link href="/advertise" className="text-primary hover:underline text-sm">
+                    <Link
+                      href="/advertise"
+                      className="text-primary hover:underline text-sm"
+                    >
                       Learn more about advertising options →
                     </Link>
                   </div>
@@ -332,5 +367,6 @@ export default function SubmitPage() {
 
       <Footer />
     </div>
-  )
+  );
 }
+
