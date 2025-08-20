@@ -57,7 +57,7 @@ export async function submitResource(prevState: ResourceFormState, formData: For
     // Send notification to admin
     const { error: adminEmailError } = await resend.emails.send({
       from: "NomadResources <submissions@nomadresources.com>",
-      to: "admin@nomadresources.com", // Change this to your admin email
+      to: "bigilisandro@gmail.com", // Change this to your admin email
       subject: `New Resource Submission: ${data.resourceName}`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">

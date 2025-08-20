@@ -53,7 +53,7 @@ export async function submitContactForm(prevState: ContactFormState, formData: F
     // Send notification to admin
     const { error: adminEmailError } = await resend.emails.send({
       from: "NomadResources <contact@nomadresources.com>",
-      to: "admin@nomadresources.com", // Change this to your admin email
+      to: "bigilisandro@gmail.com", // Change this to your admin email
       subject: `New Advertising Inquiry: ${data.company}`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
