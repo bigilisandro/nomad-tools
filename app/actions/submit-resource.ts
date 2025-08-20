@@ -56,7 +56,7 @@ export async function submitResource(prevState: ResourceFormState, formData: For
 
     // Send notification to admin
     const { error: adminEmailError } = await resend.emails.send({
-      from: "NomadResources <submissions@nomadresources.com>",
+      from: "Digital Nomad Resources <submissions@updates.digitalnomadresourc.es>",
       to: "bigilisandro@gmail.com", // Change this to your admin email
       subject: `New Resource Submission: ${data.resourceName}`,
       html: `
@@ -76,16 +76,16 @@ export async function submitResource(prevState: ResourceFormState, formData: For
 
     // Send confirmation to submitter
     const { error: userEmailError } = await resend.emails.send({
-      from: "NomadResources <submissions@nomadresources.com>",
+      from: "Digital Nomad Resources <submissions@updates.digitalnomadresourc.es>",
       to: data.email,
-      subject: "Your NomadResources Resource Submission",
+      subject: "Your Digital Nomad Resources Resource Submission",
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
           <h1 style="color: #FFC107;">Thank You for Your Submission!</h1>
           <p>We've received your resource submission for <strong>${data.resourceName}</strong>.</p>
           <p>Our team will review your submission and get back to you within 48 hours.</p>
           <p>If you have any questions, please reply to this email.</p>
-          <p>Best regards,<br>The NomadResources Team</p>
+          <p>Best regards,<br>The Digital Nomad Resources Team</p>
         </div>
       `,
     })

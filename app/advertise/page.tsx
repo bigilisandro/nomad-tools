@@ -63,7 +63,7 @@ export default function AdvertisePage() {
         <section className="bg-gradient-to-b from-background to-muted py-20 text-center">
           <div className="container px-4 md:px-6">
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
-              Advertise on <span className="text-primary">NomadResources</span>
+              Advertise on <span className="text-primary">Digital Nomad Resources</span>
             </h1>
             <p className="mx-auto mt-4 max-w-[700px] text-muted-foreground md:text-xl">
               Reach thousands of digital nomads and remote workers looking for the best tools and resources.
@@ -393,7 +393,7 @@ export default function AdvertisePage() {
                   <CardContent>
                     <p className="text-muted-foreground">
                       Yes, you can request updates to your listing at any time by contacting us at
-                      support@nomadresources.com.
+                      support@updates.digitalnomadresourc.es.
                     </p>
                   </CardContent>
                 </Card>

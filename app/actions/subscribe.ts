@@ -39,15 +39,15 @@ export async function subscribeToNewsletter(
 
     // Send confirmation email
     const { data, error } = await resend.emails.send({
-      from: "NomadResources <newsletter@nomadresources.com>",
+      from: "Digital Nomad Resources <newsletter@updates.digitalnomadresourc.es>",
       to: email,
-      subject: "Welcome to NomadResources Newsletter",
+      subject: "Welcome to Digital Nomad Resources Newsletter",
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
-          <h1 style="color: #FFC107;">Welcome to NomadResources!</h1>
+          <h1 style="color: #FFC107;">Welcome to Digital Nomad Resources!</h1>
           <p>Thank you for subscribing to our newsletter. You'll now receive weekly updates about the best tools and resources for digital nomads.</p>
           <p>If you didn't subscribe to our newsletter, you can safely ignore this email.</p>
-          <p>Best regards,<br>The NomadResources Team</p>
+          <p>Best regards,<br>The Digital Nomad Resources Team</p>
         </div>
       `,
     })

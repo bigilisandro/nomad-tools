@@ -52,7 +52,7 @@ export async function submitContactForm(prevState: ContactFormState, formData: F
   try {
     // Send notification to admin
     const { error: adminEmailError } = await resend.emails.send({
-      from: "NomadResources <contact@nomadresources.com>",
+      from: "Digital Nomad Resources <contact@updates.digitalnomadresourc.es",
       to: "bigilisandro@gmail.com", // Change this to your admin email
       subject: `New Advertising Inquiry: ${data.company}`,
       html: `
@@ -70,16 +70,16 @@ export async function submitContactForm(prevState: ContactFormState, formData: F
 
     // Send confirmation to inquirer
     const { error: userEmailError } = await resend.emails.send({
-      from: "NomadResources <contact@nomadresources.com>",
+      from: "Digital Nomad Resources <contact@updates.digitalnomadresourc.es>",
       to: data.email,
-      subject: "Your NomadResources Advertising Inquiry",
+      subject: "Your Digital Nomad Resources Advertising Inquiry",
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
           <h1 style="color: #FFC107;">Thank You for Your Interest!</h1>
-          <p>We've received your inquiry about advertising on NomadResources.</p>
+          <p>We've received your inquiry about advertising on Digital Nomad Resources.</p>
           <p>Our team will review your information and get back to you within 24 hours.</p>
           <p>If you have any questions, please reply to this email.</p>
-          <p>Best regards,<br>The NomadResources Team</p>
+          <p>Best regards,<br>The Digital Nomad Resources Team</p>
         </div>
       `,
     })

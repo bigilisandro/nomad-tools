@@ -13,7 +13,7 @@ export function Footer() {
           </div>
 
           <div className="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm text-gray-400 mb-4 md:mb-0">© 2025 NomadResources. All rights reserved.</p>
+            <p className="text-sm text-gray-400 mb-4 md:mb-0">© 2025 Digital Nomad Resources. All rights reserved.</p>
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-4 text-sm text-gray-400">
                 <Link href="#" className="hover:text-white">
