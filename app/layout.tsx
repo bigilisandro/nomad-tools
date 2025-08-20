@@ -23,11 +23,11 @@ export const metadata: Metadata = {
   ],
   authors: [
     {
-      name: "Your Name",
+      name: "Digital Nomad Resources",
       url: siteConfig.url,
     },
   ],
-  creator: "Your Name",
+  creator: "Digital Nomad Resources",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: "@yourusername",
+    creator: "@digitalnomadresources",
   },
   icons: {
     icon: "/favicon.ico",
