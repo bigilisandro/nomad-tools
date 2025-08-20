@@ -60,6 +60,21 @@ export async function subscribeToNewsletter(
       }
     }
 
+    // Create contact in Resend
+    try {
+      await resend.contacts.create({
+        email: email,
+        firstName: email.split('@')[0], // Use email prefix as first name
+        lastName: '', // Leave empty as we don't collect this
+        unsubscribed: false,
+        audienceId: '1bc10d96-35d2-4dc8-ae44-ee3404fd3ebb', // Use env var or fallback
+      })
+    } catch (contactError) {
+      console.error("Error creating contact:", contactError)
+      // Don't fail the subscription if contact creation fails
+      // The email was already sent successfully
+    }
+
     return {
       success: true,
       message: "Thanks for subscribing! Check your inbox for a confirmation.",
