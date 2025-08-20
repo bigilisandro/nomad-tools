@@ -15,11 +15,11 @@ export const metadata: Metadata = {
   keywords: [
     "digital nomad",
     "remote work",
-    "digital nomad tools",
+    "digital nomad resources",
     "remote work resources",
     "digital nomad resources",
-    "nomad tools",
-    "remote work tools",
+    "nomad resources",
+    "remote work resources",
   ],
   authors: [
     {

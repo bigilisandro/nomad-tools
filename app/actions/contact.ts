@@ -37,7 +37,7 @@ export async function submitContactForm(prevState: ContactFormState, formData: F
   // Validate form data
   const validationResult = contactSchema.safeParse(data)
   if (!validationResult.success) {
-    const errors = {}
+    const errors: Record<string, string> = {}
     validationResult.error.errors.forEach((error) => {
       errors[error.path[0]] = error.message
     })
@@ -52,8 +52,8 @@ export async function submitContactForm(prevState: ContactFormState, formData: F
   try {
     // Send notification to admin
     const { error: adminEmailError } = await resend.emails.send({
-      from: "NomadTools <contact@nomadtools.com>",
-      to: "admin@nomadtools.com", // Change this to your admin email
+      from: "NomadResources <contact@nomadresources.com>",
+      to: "admin@nomadresources.com", // Change this to your admin email
       subject: `New Advertising Inquiry: ${data.company}`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
@@ -70,16 +70,16 @@ export async function submitContactForm(prevState: ContactFormState, formData: F
 
     // Send confirmation to inquirer
     const { error: userEmailError } = await resend.emails.send({
-      from: "NomadTools <contact@nomadtools.com>",
+      from: "NomadResources <contact@nomadresources.com>",
       to: data.email,
-      subject: "Your NomadTools Advertising Inquiry",
+      subject: "Your NomadResources Advertising Inquiry",
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
           <h1 style="color: #FFC107;">Thank You for Your Interest!</h1>
-          <p>We've received your inquiry about advertising on NomadTools.</p>
+          <p>We've received your inquiry about advertising on NomadResources.</p>
           <p>Our team will review your information and get back to you within 24 hours.</p>
           <p>If you have any questions, please reply to this email.</p>
-          <p>Best regards,<br>The NomadTools Team</p>
+          <p>Best regards,<br>The NomadResources Team</p>
         </div>
       `,
     })

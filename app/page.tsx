@@ -57,7 +57,7 @@ export default function Home() {
           </div>
           <div className="container px-4 md:px-6 relative">
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
-              Your Ultimate Digital <span className="text-primary">Nomad</span> Tools
+              Your Ultimate Digital <span className="text-primary">Nomad</span> Resources
             </h1>
             <p className="mx-auto mt-4 max-w-[700px] text-muted-foreground md:text-xl">
               Discover curated resources for remote workers and digital nomads to live, work, and thrive from anywhere
@@ -77,7 +77,7 @@ export default function Home() {
         <section className="w-full px-4 py-12">
           {/* Horizontal category navigation */}
           <div className="mb-8">
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-9 gap-5">
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-10 gap-5">
               {categories.map((category) => (
                 <button
                   key={category.id}

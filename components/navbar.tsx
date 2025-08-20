@@ -43,7 +43,7 @@ export function Navbar() {
             </svg>
           </div>
           <span className="text-xl font-bold">
-            nomad<span className="bg-primary px-1 text-primary-foreground">tools</span>
+            nomad<span className="bg-primary px-1 text-primary-foreground">resources</span>
           </span>
         </Link>
         <div className="flex items-center gap-2">

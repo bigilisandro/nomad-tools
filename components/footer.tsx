@@ -8,12 +8,12 @@ export function Footer() {
         <div className="mx-auto max-w-6xl">
           <div className="mb-12">
             <h3 className="text-xl font-semibold mb-2">Subscribe to our newsletter</h3>
-            <p className="text-gray-400 mb-6">The latest nomad tools, sent to your inbox weekly.</p>
+            <p className="text-gray-400 mb-6">The latest nomad resources, sent to your inbox weekly.</p>
             <SubscribeForm darkMode={true} buttonClassName="bg-white text-black hover:bg-gray-200" />
           </div>
 
           <div className="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm text-gray-400 mb-4 md:mb-0">© 2025 NomadTools. All rights reserved.</p>
+            <p className="text-sm text-gray-400 mb-4 md:mb-0">© 2025 NomadResources. All rights reserved.</p>
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-4 text-sm text-gray-400">
                 <Link href="#" className="hover:text-white">

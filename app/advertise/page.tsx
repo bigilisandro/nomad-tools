@@ -47,7 +47,7 @@ export default function AdvertisePage() {
     }
   }, [state])
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({
       ...prev,
@@ -63,7 +63,7 @@ export default function AdvertisePage() {
         <section className="bg-gradient-to-b from-background to-muted py-20 text-center">
           <div className="container px-4 md:px-6">
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
-              Advertise on <span className="text-primary">NomadTools</span>
+              Advertise on <span className="text-primary">NomadResources</span>
             </h1>
             <p className="mx-auto mt-4 max-w-[700px] text-muted-foreground md:text-xl">
               Reach thousands of digital nomads and remote workers looking for the best tools and resources.
@@ -393,7 +393,7 @@ export default function AdvertisePage() {
                   <CardContent>
                     <p className="text-muted-foreground">
                       Yes, you can request updates to your listing at any time by contacting us at
-                      support@nomadtools.com.
+                      support@nomadresources.com.
                     </p>
                   </CardContent>
                 </Card>
